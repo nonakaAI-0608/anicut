@@ -1,0 +1,4 @@
+PySide6-Addons>=6.6
+numpy
+# 起動.bat は初回にこれらを vendor\ フォルダへ自動インストールします。
+# ffmpeg / ffprobe は別途必要です（README.md を参照）。

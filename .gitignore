@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.spec
+
+# ログ・一時ファイル
+*.log
+*.tmp
+
+# 初回起動時に入るライブラリ（PySide6 / numpy）と ffmpeg
+vendor/
+bin/
+ffmpeg.exe
+ffprobe.exe
+
+# 個人の設定・解析キャッシュ・解析結果
+anicut.ini
+cache/
+*.anicut
