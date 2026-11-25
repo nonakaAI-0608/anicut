@@ -18,7 +18,8 @@ import traceback
 from bisect import bisect_right
 from pathlib import Path
 
-APP_DIR = Path(__file__).resolve().parent
+# EXE 版（PyInstaller）では EXE のあるフォルダを基準にする（設定・キャッシュ・ffmpeg の置き場所）
+APP_DIR = Path(sys.executable).resolve().parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent
 sys.path.insert(0, str(APP_DIR / 'vendor'))
 
 from PySide6.QtCore import (Qt, QObject, QRunnable, QSettings, QSize, QThread, QThreadPool, QTimer,  # noqa: E402

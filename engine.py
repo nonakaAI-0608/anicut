@@ -9,6 +9,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import threading
 from bisect import bisect_right
@@ -17,7 +18,8 @@ from pathlib import Path
 
 import numpy as np
 
-APP_DIR = Path(__file__).resolve().parent
+# EXE 版（PyInstaller）では EXE のあるフォルダを基準にする（設定・キャッシュ・ffmpeg の置き場所）
+APP_DIR = Path(sys.executable).resolve().parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent
 CACHE_DIR = APP_DIR / 'cache'
 CACHE_VERSION = 2
 
